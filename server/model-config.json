@@ -25,8 +25,12 @@
     "dataSource": "mongoDs",
     "public": true
   },
-  "author": {
+  "user": {
     "dataSource": "mongoDs",
     "public": false
+  },
+  "session": {
+    "dataSource": "mongoDs",
+    "public": true
   }
 }
