@@ -29,6 +29,14 @@
       "options": {
         "nestRemoting": false
       }
+    },
+    "session": {
+      "type": "belongsTo",
+      "model": "session",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": false
+      }
     }
   },
   "acls": [],

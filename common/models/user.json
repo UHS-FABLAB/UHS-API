@@ -1,33 +1,33 @@
 {
-  "name": "vote",
-  "plural": "votes",
+  "name": "user",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "created_at": {
-      "type": "date",
+    "imei": {
+      "type": "string",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "user": {
+    "registerSession": {
       "type": "belongsTo",
-      "model": "user",
+      "model": "session",
       "foreignKey": "",
       "options": {
         "disableInclude": true
       }
-    },
-    "answer": {
-      "type": "belongsTo",
-      "model": "answer",
-      "foreignKey": "",
-      "options": {
-        "disableInclude": true
+      ,
+      "nameToFindSession": {
+        "type": "hasMany",
+        "model": "sessions",
+        "foreignKey": "",
+        "options": {
+          "disableInclude": true
+        }
       }
     }
   },

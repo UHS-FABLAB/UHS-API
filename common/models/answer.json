@@ -21,6 +21,14 @@
       "options": {
         "nestRemoting": false
       }
+    },
+    "votes": {
+      "type": "hasMany",
+      "model": "vote",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": false
+      }
     }
   },
   "acls": [],
