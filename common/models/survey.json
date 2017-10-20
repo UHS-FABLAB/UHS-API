@@ -1,0 +1,36 @@
+{
+  "name": "survey",
+  "plural": "surveys",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answers": {
+      "type": "hasMany",
+      "model": "answer",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

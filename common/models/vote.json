@@ -1,0 +1,28 @@
+{
+  "name": "vote",
+  "plural": "votes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created_at": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "author": {
+      "type": "belongsTo",
+      "model": "author",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
