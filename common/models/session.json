@@ -1,0 +1,44 @@
+{
+  "name": "session",
+  "plural": "sessions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "author": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      },
+      "users": {
+        "type": "hasMany",
+        "model": "user",
+        "foreignKey": "",
+        "options": {
+          "disableInclude": true
+        }
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "survey",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,36 @@
+{
+  "name": "user",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "imei": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "registerSession": {
+      "type": "belongsTo",
+      "model": "session",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+      ,
+      "nameToFindSession": {
+        "type": "hasMany",
+        "model": "sessions",
+        "foreignKey": "",
+        "options": {
+          "disableInclude": true
+        }
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

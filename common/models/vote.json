@@ -1,0 +1,36 @@
+{
+  "name": "vote",
+  "plural": "votes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created_at": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "answer": {
+      "type": "belongsTo",
+      "model": "answer",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

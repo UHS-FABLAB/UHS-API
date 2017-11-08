@@ -12,5 +12,33 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "survey": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "answer": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "vote": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mongoDs",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "create": true
+        }
+      }
+    }
+  },
+  "session": {
+    "dataSource": "mongoDs",
+    "public": true
   }
 }
