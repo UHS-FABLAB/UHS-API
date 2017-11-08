@@ -27,7 +27,15 @@
   },
   "user": {
     "dataSource": "mongoDs",
-    "public": false
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "create": true
+        }
+      }
+    }
   },
   "session": {
     "dataSource": "mongoDs",
