@@ -1,8 +1,9 @@
 {
-  "name": "user",
+  "name": "User",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
+    "emailVerificationRequired": false,
     "validateUpsert": true
   },
   "properties": {
@@ -11,16 +12,24 @@
       "required": true
     }
   },
+  "hiddens": ["logged"],
   "validations": [],
   "relations": {
+    "accessTokens": {
+      "type": "hasOne",
+      "model": "AccessToken",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    },
     "registerSession": {
       "type": "belongsTo",
       "model": "session",
       "foreignKey": "",
       "options": {
         "disableInclude": true
-      }
-      ,
+      },
       "nameToFindSession": {
         "type": "hasMany",
         "model": "sessions",
@@ -31,6 +40,54 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "deleteById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "logout"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "patchAttributes"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "replaceById"
+    }
+  ],
   "methods": {}
 }

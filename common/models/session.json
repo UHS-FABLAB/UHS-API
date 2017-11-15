@@ -23,22 +23,35 @@
       },
       "users": {
         "type": "hasMany",
-        "model": "user",
+        "model": "User",
         "foreignKey": "",
         "options": {
           "disableInclude": true
         }
-    },
-    "surveys": {
-      "type": "hasMany",
-      "model": "survey",
-      "foreignKey": "",
-      "options": {
-        "disableInclude": true
+      },
+      "surveys": {
+        "type": "hasMany",
+        "model": "survey",
+        "foreignKey": "",
+        "options": {
+          "disableInclude": true
+        }
       }
     }
-  }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

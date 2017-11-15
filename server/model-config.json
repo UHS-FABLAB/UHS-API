@@ -13,6 +13,27 @@
       "./mixins"
     ]
   },
+
+
+  "AccessToken": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+
+
+
   "survey": {
     "dataSource": "mongoDs",
     "public": true
@@ -25,17 +46,9 @@
     "dataSource": "mongoDs",
     "public": true
   },
-  "user": {
+  "User": {
     "dataSource": "mongoDs",
-    "public": true,
-    "options": {
-      "remoting": {
-        "sharedMethods": {
-          "*": false,
-          "create": true
-        }
-      }
-    }
+    "public": true
   },
   "session": {
     "dataSource": "mongoDs",

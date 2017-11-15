@@ -16,7 +16,7 @@
   "relations": {
     "user": {
       "type": "belongsTo",
-      "model": "user",
+      "model": "User",
       "foreignKey": "",
       "options": {
         "disableInclude": true
@@ -29,8 +29,27 @@
       "options": {
         "disableInclude": true
       }
+    },
+    "survey": {
+      "type": "belongsTo",
+      "model": "survey",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
