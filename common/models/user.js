@@ -41,7 +41,7 @@ module.exports = function(User) {
         cb(err, undefined);
         return;
       }
-      user.createAccessToken(3600, cb);
+      user.createAccessToken(14400, cb);
       // else if (created) {
       //   user.createAccessToken(3600, cb);
       // } else {
